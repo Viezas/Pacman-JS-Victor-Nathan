@@ -1,0 +1,293 @@
+*{
+    font-family: Arial;
+}
+
+.form{
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: #000;
+}
+
+.Info_Column h2, .Info_Column h3, .Classement_Column h3, .Classement_Column h2 {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.Info_Column h2, .Classement_Column h2 {
+    font-family: PacFont;
+    color: #FF1A0B;
+}
+
+.Info_Column h3 {
+    font-family: PacFont;
+    color: #00D4E0;
+}
+
+span {
+    margin-left: 5px;
+}
+
+.text_input {
+    background-color: #fff;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+}
+
+.submit_input {
+    background: linear-gradient(#05ff2e, #02c01c);
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.scoreDiv {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: repeat(10, 70px);
+    grid-template-columns: repeat(12, 125px);
+    justify-content: center;
+}
+
+.Classement_Column{
+    grid-column: 1/4;
+    grid-row: 4/11;
+    width: 100%;
+}
+
+.Game_Column{
+    grid-column: 4/13;
+    grid-row: 1/11;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0b0b0b;
+}
+
+.Info_Column{
+    grid-column: 1/4;
+    grid-row: 1/4;
+    width: 100%;
+}
+
+ul {
+    color: white;
+}
+
+.GameOver{
+    color: #FF1A0B;
+    display: none;
+    grid-column: 4/13;
+    grid-row: 1/11;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.GameOver h1 {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.centerNameSubmit {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.message {
+    font-size: 30px;
+}
+
+.map {
+    grid-column: 4/10;
+    grid-row: 1/11;
+    background-color: #0b0b0b;
+    width: 1000px;
+    height: 1000px;
+    position: relative;
+    zoom: 67% ;
+    display: none;
+}
+
+
+img[src="assets/img/pacman.gif"] {
+    position: absolute;
+    top: 500px;
+    left: 500px;
+}
+img[src="assets/img/red-ghost.png"] {
+    position: absolute;
+    top: 300px;
+    left: 400px;
+    width: 100px;
+}
+img[src="assets/img/blue-ghost.png"] {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    width: 100px;
+}
+img[src="assets/img/pink-ghost.png"] {
+    position: absolute;
+    top: 800px;
+    left: 700px;
+    width: 100px;
+}
+img[src="assets/img/background.svg"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1000px;
+    height: 1000px;
+}
+
+.dot {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+.dot::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff6;
+}
+
+.toLeft {
+    transform: none;
+}
+.toTop {
+    transform: rotate(90deg);
+}
+.toRight {
+    transform: scale(-1, 1);
+}
+.toBottom {
+    transform: rotate(-90deg);
+}
+
+
+.btnGame {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 15px 30px;
+    border: 1px solid #be1486;
+    border-radius: 8px;
+    background: #ff25fd;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ff25fd), to(#be1486));
+    background: -moz-linear-gradient(top, #ff25fd, #be1486);
+    background: linear-gradient(to bottom, #ff25fd, #be1486);
+    -webkit-box-shadow: #ff2cff 0px 0px 40px 0px;
+    -moz-box-shadow: #ff2cff 0px 0px 40px 0px;
+    box-shadow: #ff2cff 0px 0px 40px 0px;
+    text-shadow: #700c4f 1px 1px 1px;
+    font: normal normal bold 27px verdana;
+    color: #ffffff;
+    text-decoration: none;
+}
+.btnGame:hover,
+.btnGame:focus {
+    border: 1px solid #360ae1;
+    background: #a21eff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#a21eff), to(#3b0bf4));
+    background: -moz-linear-gradient(top, #a21eff, #3b0bf4);
+    background: linear-gradient(to bottom, #a21eff, #3b0bf4);
+    color: #ffffff;
+    text-decoration: none;
+    -webkit-box-shadow: #a21eff 0px 0px 40px 0px;
+    -moz-box-shadow: #a21eff 0px 0px 40px 0px;
+    box-shadow: #a21eff 0px 0px 40px 0px;
+}
+.btnGame:active {
+    background: #be1486;
+    background: -webkit-gradient(linear, left top, left bottom, from(#be1486), to(#be1486));
+    background: -moz-linear-gradient(top, #be1486, #be1486);
+    background: linear-gradient(to bottom, #be1486, #be1486);
+}
+.btnGame:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFYklEQVRIiXWVbailVRXHf2vv/bydl+u9Z3xrvEaBRDpNYzEfREyozGLSkMLyS0gSBBV9ioKiLAwCg+hDhp+cMgkji2CYZCiMKSlwbhnVDDhY2Mit6XbuPeee55zndb/04TxXT6QLFs/eG57/f6291/ovARSvYxeeWDday20QPgjydufCtc4J1nG5aflz03C6rHn2zs9P7OthSEfgV4n++viIOAr3aR0eNBFviTSIAgJYB20LZQ1lKRQlF4tKvl6UPPnhB/dWcTygVgk68PX1KOJkmnBPlgkmiRETI0oTQiDYBtc0NLWjKGFeCHkO+3P5eVmET3z0G5NpB6UA/z8Efzq5PkpiOdPvheO9gcH0hqhsgMTZqwRtRagKXDGjLirmC8gXMMuFvYls5QXvv//hvb2DgHV3TfK7RzZ0HPNUr8ft/YEmGq6jh4c630D311FZH4lTRGsQQYUGvMN5IAg+cLgs5egdR7MnT2+VAog5uC8T8UBk+ECWgMkydO8K1HCEGWyge0NEp4Rg8dUCZ2ICEGxD0rQktac2gX5P6GXhxKJQDwCPAV4D8sx3NrI44mf9HsNeX2EGHfjwEGZ4FRLfgOjjiL4GiRZAC64ltDW0Fba1NC14LwDM5rzzXTf1Hv3l82WrulK6SykOGw1Ka0THSJSg4hSJRojcCpzg3NYmP/jhHtOFQaIEohjRBq1AZAmeJpClbEaGuwClALznbiVh+RoAIoAgogADxFy48AKnTp3l7LMxX/vmDoggSPcFCIQARgfSBJTibsCrn3x1A+e5OSB4D8F7grPgWrytwe9DeJ7x7ll++/stBhvXkmTXE9qW4CzB2eV/AXxX7EoFlHDzwx/fUMZ6jLVytXcBa8G2DtOU+LrAl3O82UVl57n1loyP3Ttid3eHE7dNCPWC0JT4tqW1YK3QWmgaYb4QrCMlCsrYFqxFHXRo00BUFUgxw2kDIaCaCjERn/yIxdcv44p9XD7BlTltbalbqBsoSpjOxM/m8kQIfPkLj02t8S22api2livrFsoKjGkQNekaq0ElOShFcG4ZdbXAlzm2KChrqCohvyxMLqqX3PX+fZ95ZPfFg0Yz9397wuNfHF2oa25IYqEow/KNQ0Xsdgl1gUQJIorgHcE2TLcbppcaptuK2SVFeUmhcmFoZDP7C9WqrhmAtpUzVcOHejYQghAIOA9Z25JULdooRAkQ8M6zfT5j62TEWiSsxcKhCAZ9ITbKSAh3AN8/kCAFsCjCU0Wl5q5TjrIS8jns5zDNYZZ75rljMfcUJRw+VrN5Y0TfwNDAMBKGEaylhn6s37GipstUPvfo3s7+jO/NC4VOYtIsonVmqZTzpc+LJbG1EILnyH0NyUCjFWgFiRYGWUpk9KjDVa80GsB84R/6zzhcnOwL6Ii1UcZgNCTqDyHpE0wGcYpOM+J+jys2I458OkGlK/MqyZDg/vnqQadFQDjzx7J577HsGe/kXqWlb4wiTRRxaoizmHSQkg4y0n5CksWYWJMd8gyPaOptRcjBOjv99U7+pVPjcgw4QF4hANTT58rxe45mT7eWOwMyElnmqDVoFTDKo8UjOAQP3iGJQx/x/PuqdvzQc+OvfOv87CXAdgR2lSAA4RfnivGN10U/sg1Xe8/bghflQychIUBYAnvnsa2nLBynf7P4+2e/O/npH/7RvgzMgQKoAft/I7MzBQzefSy95fhb00+98Q3R7dddo0fra0r1sgB4/jW21bnz1c6Pf1W++LdtfxF4AbgIXAJ2gBnQvObQX7EYuBJ4U5bITet9eXOAwXTufdVQAJMO7HLn4w64OAj6tTJY3a+Sxit+UIa282ZlzUrA/r/cMa98TSQmaAAAAABJRU5ErkJggg==") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.btnReGame{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 24px;
+    border: 1px solid #597589;
+    border-radius: 8px;
+    background: #92c0e1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#92c0e1), to(#597589));
+    background: -moz-linear-gradient(top, #92c0e1, #597589);
+    background: linear-gradient(to bottom, #92c0e1, #597589);
+    -webkit-box-shadow: #98c8eb 0px 0px 40px 0px;
+    -moz-box-shadow: #98c8eb 0px 0px 40px 0px;
+    box-shadow: #98c8eb 0px 0px 40px 0px;
+    text-shadow: #405462 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
+}
+.btnReGame:hover,
+.btnReGame:focus {
+    border: 1px solid #7fa7c4;
+    background: #afe6ff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#afe6ff), to(#6b8ca4));
+    background: -moz-linear-gradient(top, #afe6ff, #6b8ca4);
+    background: linear-gradient(to bottom, #afe6ff, #6b8ca4);
+    color: #ffffff;
+    text-decoration: none;
+}
+.btnReGame:active {
+    background: #597589;
+    background: -webkit-gradient(linear, left top, left bottom, from(#597589), to(#597589));
+    background: -moz-linear-gradient(top, #597589, #597589);
+    background: linear-gradient(to bottom, #597589, #597589);
+}
+.btnReGame:after{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 -4px -6px 4px;
+    position: relative;
+    top: 1px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAFYklEQVRIiXWVbailVRXHf2vv/bydl+u9Z3xrvEaBRDpNYzEfREyozGLSkMLyS0gSBBV9ioKiLAwCg+hDhp+cMgkji2CYZCiMKSlwbhnVDDhY2Mit6XbuPeee55zndb/04TxXT6QLFs/eG57/f6291/ovARSvYxeeWDday20QPgjydufCtc4J1nG5aflz03C6rHn2zs9P7OthSEfgV4n++viIOAr3aR0eNBFviTSIAgJYB20LZQ1lKRQlF4tKvl6UPPnhB/dWcTygVgk68PX1KOJkmnBPlgkmiRETI0oTQiDYBtc0NLWjKGFeCHkO+3P5eVmET3z0G5NpB6UA/z8Efzq5PkpiOdPvheO9gcH0hqhsgMTZqwRtRagKXDGjLirmC8gXMMuFvYls5QXvv//hvb2DgHV3TfK7RzZ0HPNUr8ft/YEmGq6jh4c630D311FZH4lTRGsQQYUGvMN5IAg+cLgs5egdR7MnT2+VAog5uC8T8UBk+ECWgMkydO8K1HCEGWyge0NEp4Rg8dUCZ2ICEGxD0rQktac2gX5P6GXhxKJQDwCPAV4D8sx3NrI44mf9HsNeX2EGHfjwEGZ4FRLfgOjjiL4GiRZAC64ltDW0Fba1NC14LwDM5rzzXTf1Hv3l82WrulK6SykOGw1Ka0THSJSg4hSJRojcCpzg3NYmP/jhHtOFQaIEohjRBq1AZAmeJpClbEaGuwClALznbiVh+RoAIoAgogADxFy48AKnTp3l7LMxX/vmDoggSPcFCIQARgfSBJTibsCrn3x1A+e5OSB4D8F7grPgWrytwe9DeJ7x7ll++/stBhvXkmTXE9qW4CzB2eV/AXxX7EoFlHDzwx/fUMZ6jLVytXcBa8G2DtOU+LrAl3O82UVl57n1loyP3Ttid3eHE7dNCPWC0JT4tqW1YK3QWmgaYb4QrCMlCsrYFqxFHXRo00BUFUgxw2kDIaCaCjERn/yIxdcv44p9XD7BlTltbalbqBsoSpjOxM/m8kQIfPkLj02t8S22api2livrFsoKjGkQNekaq0ElOShFcG4ZdbXAlzm2KChrqCohvyxMLqqX3PX+fZ95ZPfFg0Yz9397wuNfHF2oa25IYqEow/KNQ0Xsdgl1gUQJIorgHcE2TLcbppcaptuK2SVFeUmhcmFoZDP7C9WqrhmAtpUzVcOHejYQghAIOA9Z25JULdooRAkQ8M6zfT5j62TEWiSsxcKhCAZ9ITbKSAh3AN8/kCAFsCjCU0Wl5q5TjrIS8jns5zDNYZZ75rljMfcUJRw+VrN5Y0TfwNDAMBKGEaylhn6s37GipstUPvfo3s7+jO/NC4VOYtIsonVmqZTzpc+LJbG1EILnyH0NyUCjFWgFiRYGWUpk9KjDVa80GsB84R/6zzhcnOwL6Ii1UcZgNCTqDyHpE0wGcYpOM+J+jys2I458OkGlK/MqyZDg/vnqQadFQDjzx7J577HsGe/kXqWlb4wiTRRxaoizmHSQkg4y0n5CksWYWJMd8gyPaOptRcjBOjv99U7+pVPjcgw4QF4hANTT58rxe45mT7eWOwMyElnmqDVoFTDKo8UjOAQP3iGJQx/x/PuqdvzQc+OvfOv87CXAdgR2lSAA4RfnivGN10U/sg1Xe8/bghflQychIUBYAnvnsa2nLBynf7P4+2e/O/npH/7RvgzMgQKoAft/I7MzBQzefSy95fhb00+98Q3R7dddo0fra0r1sgB4/jW21bnz1c6Pf1W++LdtfxF4AbgIXAJ2gBnQvObQX7EYuBJ4U5bITet9eXOAwXTufdVQAJMO7HLn4w64OAj6tTJY3a+Sxit+UIa282ZlzUrA/r/cMa98TSQmaAAAAABJRU5ErkJggg==") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.btnReGame a {
+    text-decoration: none;
+    color: #fff;
+}
